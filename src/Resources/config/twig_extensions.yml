@@ -1,0 +1,15 @@
+parameters:
+  arsthanea_kunstmaan_algolia.twig_extension.class: 'ArsThanea\KunstmaanAlgoliaBundle\Twig\AlgoliaTwigExtension'
+
+services:
+
+  arsthanea_kunstmaan_algolia.twig_extension:
+    class: '%arsthanea_kunstmaan_algolia.twig_extension.class%'
+    public: false
+    arguments:
+      - '%arsthanea_kunstmaan_algolia.app_id%'
+      - '%arsthanea_kunstmaan_algolia.public_key%'
+      - '%searchindexprefix%'
+      - '%kunstmaan_node_search.indexname%'
+    tags:
+      - { name: twig.extension }

@@ -1,0 +1,19 @@
+parameters:
+  arsthanea_kunstmaan_algolia.search_provider.class: 'ArsThanea\KunstmaanAlgoliaBundle\Search\AlgoliaSearchProvider'
+  arsthanea_kunstmaan_algolia.client.class: 'AlgoliaSearch\Client'
+
+services:
+
+  arsthanea_kunstmaan_algolia.client:
+    class: '%arsthanea_kunstmaan_algolia.client.class%'
+    arguments:
+      - '%arsthanea_kunstmaan_algolia.app_id%'
+      - '%arsthanea_kunstmaan_algolia.app_secret%'
+
+  arsthanea_kunstmaan_algolia.search_provider:
+    class: '%arsthanea_kunstmaan_algolia.search_provider.class%'
+    public: false
+    arguments:
+      - '@arsthanea_kunstmaan_algolia.client'
+    tags:
+      - { name: kunstmaan_search.search_provider, alias: Algolia }

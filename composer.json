@@ -1,0 +1,25 @@
+{
+  "name": "arsthanea/kunstmaan-algolia-bundle",
+  "description": "",
+  "type": "library",
+  "require": {
+    "algolia/algoliasearch-client-php": "~1.4",
+    "arsthanea/kunstmaan-extra-bundle": ">=0.3.0 <2.0",
+    "friendsofsymfony/user-bundle": "2.0.*@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "ArsThanea\\KunstmaanAlgoliaBundle\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.3"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Maciej Łebkowski",
+      "email": "m.lebkowski@gmail.com"
+    }
+  ]
+}
