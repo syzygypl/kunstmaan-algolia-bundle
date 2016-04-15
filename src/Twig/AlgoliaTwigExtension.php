@@ -15,7 +15,7 @@ class AlgoliaTwigExtension extends \Twig_Extension
         ];
     }
 
-    public function getFilters()
+    public function getFunctions()
     {
         return [
             new \Twig_SimpleFunction('algolia_settings', [$this, 'getAlgoliaSettings'])
