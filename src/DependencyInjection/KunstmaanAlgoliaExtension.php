@@ -34,6 +34,7 @@ class KunstmaanAlgoliaExtension extends Extension
         foreach ($configs['client'] as $key => $value) {
             $container->setParameter('arsthanea_kunstmaan_algolia.' . $key, $value);
         }
+        $container->setParameter('arsthanea_kunstmaan_algolia.facets', $configs['facets']);
 
         if ($configs['client']['public_key']) {
             $loader->load('twig_extensions.yml');

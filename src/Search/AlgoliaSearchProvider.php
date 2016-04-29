@@ -18,9 +18,15 @@ class AlgoliaSearchProvider implements SearchProviderInterface
      */
     private $client;
 
-    public function __construct(Client $client)
+    /**
+     * @var array
+     */
+    private $facets;
+
+    public function __construct(Client $client, array $facets = ['type'])
     {
         $this->client = $client;
+        $this->facets = $facets;
     }
 
 
@@ -52,7 +58,7 @@ class AlgoliaSearchProvider implements SearchProviderInterface
     public function createIndex($indexName)
     {
         $this->initIndex($indexName)->setSettings([
-            'attributesForFaceting' => ['type'],
+            'attributesForFaceting' => $this->facets,
             'ranking'               => [
                 'typo',
                 'geo',

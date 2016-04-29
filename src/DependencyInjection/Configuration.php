@@ -13,6 +13,8 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('kunstmaan_algolia');
 
+        $rootNode->children()->arrayNode('facets')->defaultValue(['type'])->prototype('scalar');
+
         $client = $rootNode->children()->arrayNode('client');
         $client->children()->scalarNode('app_id')->isRequired();
         $client->children()->scalarNode('app_secret')->isRequired();

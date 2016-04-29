@@ -15,5 +15,6 @@ services:
     public: false
     arguments:
       - '@arsthanea_kunstmaan_algolia.client'
+      - '%arsthanea_kunstmaan_algolia.facets%'
     tags:
       - { name: kunstmaan_search.search_provider, alias: Algolia }
