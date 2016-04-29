@@ -1,6 +1,7 @@
 {
   "name": "arsthanea/kunstmaan-algolia-bundle",
-  "description": "",
+  "description": "Enable indexing Kunstmaan Bundles CMS pages in Algolia",
+  "keywords": ["kunstmaan", "cms", "search", "indexer", "algolia", "autocomplete"],
   "type": "library",
   "require": {
     "algolia/algoliasearch-client-php": "~1.4",
